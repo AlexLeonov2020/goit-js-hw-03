@@ -1,12 +1,12 @@
-function getShippingMessage(country, price, deliveryFee) {
-    // Обчислення загальної вартості замовлення
-    const totalPrice = price + deliveryFee;
-    
-    // Повертаємо рядок із повідомленням
-    return `Shipping to ${country} will cost ${totalPrice} credits`;
+function makeArray(firstArray, secondArray, maxLength) {
+  const newArray = firstArray.concat(secondArray);
+  return newArray.slice(0, maxLength);
 }
 
-// Перевірка коректності роботи функції
-console.log(getShippingMessage("Australia", 120, 50)); // "Shipping to Australia will cost 170 credits"
-console.log(getShippingMessage("Germany", 80, 20)); // "Shipping to Germany will cost 100 credits"
-console.log(getShippingMessage("Sweden", 100, 20)); // "Shipping to Sweden will cost 120 credits"
+// Перевірка 
+console.log(makeArray(["Mango", "Poly"], ["Ajax", "Chelsea"], 3));
+console.log(makeArray(["Mango", "Poly", "Houston"], ["Ajax", "Chelsea"], 4));
+console.log(makeArray(["Mango"], ["Ajax", "Chelsea", "Poly", "Houston"], 3));
+console.log(makeArray(["Earth", "Jupiter"], ["Neptune", "Uranus"], 2));
+console.log(makeArray(["Earth", "Jupiter"], ["Neptune", "Uranus"], 4));
+console.log(makeArray(["Earth", "Jupiter"], ["Neptune", "Uranus", "Venus"], 0));
